@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public abstract class Fruit {
 
     private String name;
@@ -28,7 +30,7 @@ public abstract class Fruit {
         this.price = price;
     }
 
-    public boolean isExpired() {
+    public boolean getExpired() {
         return this.expired;
     }
 
