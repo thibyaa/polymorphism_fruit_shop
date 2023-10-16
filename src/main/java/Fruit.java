@@ -1,4 +1,4 @@
-public class Fruit {
+public abstract class Fruit {
 
     private String name;
     private double price;
@@ -12,7 +12,6 @@ public class Fruit {
     }
 
 //    GETTERS AND SETTERS
-
     public String getName() {
         return this.name;
     }
