@@ -18,4 +18,6 @@ public class Berry extends Fruit{
     public void setNumberOfBerries(int numberOfBerries) {
         this.numberOfBerries = numberOfBerries;
     }
+
+
 }

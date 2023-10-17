@@ -15,14 +15,10 @@ public class FruitTest {
     void setUp(){
         strawberries = new Berry("Strawberry", 5.99, 20, LocalDate.of(2023,10,11), 6);
     }
-
-    @Disabled
+    
     @Test
     void canCheckIfFruitIsExpired(){
         strawberries.checkIfFruitIsExpired();
-        System.out.println(LocalDate.now());
-        System.out.println(strawberries.dateOfDisplay.plusDays(strawberries.shelfLife));
-        System.out.println(strawberries.getExpired());
         assertThat(strawberries.getExpired()).isEqualTo(true);
     }
 
