@@ -1,6 +1,4 @@
-import org.assertj.core.internal.bytebuddy.asm.Advice;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -15,7 +13,7 @@ public class FruitTest {
     void setUp(){
         strawberries = new Berry("Strawberry", 5.99, 20, LocalDate.of(2023,10,11), 6);
     }
-    
+
     @Test
     void canCheckIfFruitIsExpired(){
         strawberries.checkIfFruitIsExpired();
