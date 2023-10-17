@@ -5,8 +5,8 @@ public class Citrus extends Fruit {
     private boolean inAPack;
 
 //    CONSTRUCTOR
-    public Citrus(String name, double price, boolean expired, boolean inAPack){
-        super(name, price, expired);
+    public Citrus(String name, double price, LocalDate dateOfDisplay, int shelfLife, boolean inAPack){
+        super(name, price, dateOfDisplay, shelfLife);
         this.inAPack = inAPack;
     }
 

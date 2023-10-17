@@ -2,15 +2,27 @@ import java.time.LocalDate;
 
 public abstract class Fruit {
 
-    private String name;
-    private double price;
-    private boolean expired;
+    protected String name;
+    protected double price;
+    protected boolean expired;
+    protected LocalDate dateOfDisplay;
+    protected int shelfLife;
 
 //    CONSTRUCTOR
-    public Fruit (String name, double price, boolean expired){
+    public Fruit (String name, double price, LocalDate dateOfDisplay, int shelfLife){
         this.name = name;
         this.price = price;
-        this.expired = expired;
+        this.expired = false;
+        this.dateOfDisplay = dateOfDisplay;
+        this.shelfLife = shelfLife;
+    }
+
+//    CUSTOM METHODS
+    public void checkIfFruitIsExpired(){
+        if(LocalDate.now() == (dateOfDisplay.plusDays(shelfLife))){
+            setPrice(this.price *= 0.5);
+            setExpired(true);
+        }
     }
 
 //    GETTERS AND SETTERS
@@ -36,5 +48,21 @@ public abstract class Fruit {
 
     public void setExpired(boolean expired) {
         this.expired = expired;
+    }
+
+    public LocalDate getDateOfDisplay() {
+        return dateOfDisplay;
+    }
+
+    public void setDateOfDisplay(LocalDate dateOfDisplay) {
+        this.dateOfDisplay = dateOfDisplay;
+    }
+
+    public int getShelfLife() {
+        return shelfLife;
+    }
+
+    public void setShelfLife(int shelfLife) {
+        this.shelfLife = shelfLife;
     }
 }

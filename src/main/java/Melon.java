@@ -1,9 +1,11 @@
+import java.time.LocalDate;
+
 public class Melon extends Fruit{
 
     private boolean preCut;
 
-    public Melon(String name, double price, boolean expired, boolean preCut){
-        super(name, price, expired);
+    public Melon(String name, double price, LocalDate dateOfDisplay, int shelfLife, boolean preCut){
+        super(name, price, dateOfDisplay, shelfLife);
         this.preCut = preCut;
     }
 
