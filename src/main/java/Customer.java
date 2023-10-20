@@ -12,6 +12,7 @@ public class Customer {
         this.basket = basket;
     }
 
+
     public String getName() {
         return name;
     }

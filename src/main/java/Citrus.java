@@ -10,6 +10,7 @@ public class Citrus extends Fruit {
         this.inAPack = inAPack;
     }
 
+
 //    GETTERS AND SETTERS
     public boolean isInAPack() {
         return inAPack;
