@@ -5,11 +5,11 @@ public class Customer {
     private boolean isMember;
     private Basket basket;
 
-    public Customer(String name, double wallet, boolean isMember, Basket basket){
+    public Customer(String name, double wallet, boolean isMember){
         this.name = name;
         this.wallet = wallet;
         this.isMember = isMember;
-        this.basket = basket;
+        this.basket = new Basket();
     }
 
 

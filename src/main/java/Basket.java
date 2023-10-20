@@ -7,10 +7,10 @@ public class Basket {
     private double total;
 
 //    CONSTRUCTOR
-    public Basket(boolean discountApplied, double total){
-        this.discountApplied = discountApplied;
+    public Basket(){
+        this.discountApplied = false;
         this.fruits = new ArrayList<>();
-        this.total = total;
+        this.total = 00.00;
     }
 //    CUSTOM METHODS
     public void memberDiscount(Customer customer){
