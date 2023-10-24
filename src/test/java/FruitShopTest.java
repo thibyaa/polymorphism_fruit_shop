@@ -94,5 +94,6 @@ public class FruitShopTest {
         assertThat(kavsFruit.getFruitStock().contains(orange)).isEqualTo(false);
         assertThat(kavsFruit.getTill()).isEqualTo(108.99);
     }
+
 }
 

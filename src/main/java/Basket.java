@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Basket {
 
@@ -15,18 +16,31 @@ public class Basket {
 //    CUSTOM METHODS
     public void memberDiscount(Customer customer){
         if(customer.isMember()){
-            this.total *= 0.1;
+            this.total *= 0.9;
             setDiscountApplied(true);
         } else this.total *= 1;
     }
 
-// TODO: if there is three of any fruit in the basket, sell it for the price of 2
     public void buyThreeGetOneFree() {
+        HashMap<Fruit, Integer> fruitfulDiscount = new HashMap<>();
         // loop through the fruits array
-        // create a hash map with counters for value?
-        // if any of the counters are 3, remove the items from the hashmap
-        // deduct the price of one fruit from the overall total
-        // discount applied boolean == true
+        for(Fruit fruit: fruits){
+            if(fruitfulDiscount.containsKey(fruit)) {
+                fruitfulDiscount.put(fruit, fruitfulDiscount.get(fruit) + 1);
+            } else fruitfulDiscount.put(fruit, 1);
+        }
+
+        // divide all values by 3, round down to the nearest whole value
+        for(Fruit fruit: fruitfulDiscount.keySet()){
+            double freeFruit = Math.floor(fruitfulDiscount.get(fruit)/3);
+            double totalDiscount = fruit.getPrice() * freeFruit;
+            setTotal(this.total -= totalDiscount);
+
+            if(totalDiscount > 0){
+                setDiscountApplied(true);
+            }
+        }
+
     }
 
     public void calculateTotal(){
