@@ -6,8 +6,13 @@ import java.util.Scanner;
 public class Runner {
 
     static Customer newCustomer;
+    static Fruit muskmelon;
+    static Fruit cantalope;
     static Fruit watermelon;
-    static Fruit orange;
+    static Fruit grapefruit;
+    static Fruit yuzu;
+    static Fruit kumquat;
+    static Fruit strawberries;
     static FruitShop brightFruit = new FruitShop("Bright Fruit", 0.00);
 
 
@@ -23,7 +28,7 @@ public class Runner {
         if(inputDecision == "Y"){
             isMember = true;
         }
-        newCustomer = new Customer(customerName, 50.00, isMember);
+        newCustomer = new Customer(customerName, 10.00, isMember);
 //        brightFruit.addCustomerToShop(newCustomer);
 
         System.out.println("Welcome to Kav's Fruit Shop " + customerName);
@@ -53,10 +58,20 @@ public class Runner {
     }
 
     public static void listAvailableFruit(){
-        watermelon = new Melon("Watermelon", 6.00, LocalDate.of(2023, 10, 20), 5, true);
-        orange = new Citrus("Oranges", 8.99, LocalDate.of(2023, 10, 18), 5, true);
+        watermelon = new Melon("Watermelon", 4.00, LocalDate.of(2023, 10, 20), 5, true);
+        cantalope = new Melon("Cantalope", 6.00, LocalDate.of(2023, 10, 20), 5, true);
+        muskmelon = new Melon("Muskmelon", 10.00, LocalDate.of(2023, 10, 20), 5, true);
+        grapefruit = new Citrus("Grapefruit", 8.99, LocalDate.of(2023, 10, 18), 5, true);
+        yuzu = new Citrus("Yuzu", 5.99, LocalDate.of(2023, 10, 18), 5, true);
+        kumquat = new Citrus("Kumquat", 18.99, LocalDate.of(2023, 10, 18), 5, true);
+        strawberries = new Berry("Strawberry", 5.99, 20, LocalDate.of(2023, 10, 17), 5);
         brightFruit.addFruitToStock(watermelon);
-        brightFruit.addFruitToStock(orange);
+        brightFruit.addFruitToStock(cantalope);
+        brightFruit.addFruitToStock(muskmelon);
+        brightFruit.addFruitToStock(grapefruit);
+        brightFruit.addFruitToStock(yuzu);
+        brightFruit.addFruitToStock(kumquat);
+        brightFruit.addFruitToStock(strawberries);
 
         System.out.println("We currently have:");
         for(Fruit fruit: brightFruit.getFruitStock()){
