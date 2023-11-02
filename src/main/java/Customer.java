@@ -12,7 +12,19 @@ public class Customer {
         this.basket = new Basket();
     }
 
+//    CUSTOM METHODS
+    public boolean canBuyFruit(){
+        this.basket.calculateTotal();
+        if(this.wallet > this.basket.getTotal()){
+            return true;
+        } return false;
+    }
 
+    public void buyFruit(){
+        if(canBuyFruit()){
+            this.wallet -= this.basket.getTotal();
+        }
+    }
     public String getName() {
         return name;
     }

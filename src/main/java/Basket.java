@@ -52,6 +52,16 @@ public class Basket {
         this.fruits.add(fruit);
     }
 
+    public void applyDiscount(Customer customer){
+        if(this.fruits.size() > 3){
+            buyThreeForThePriceOfTwo();
+        }
+
+        if(customer.isMember()){
+            memberDiscount(customer);
+        }
+    }
+
 //    GETTERS AND SETTERS
     public boolean isDiscountApplied() {
         return this.discountApplied;
