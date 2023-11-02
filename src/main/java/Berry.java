@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public class Berry extends Fruit{
+public class Berry extends Fruit {
 
     private int numberOfBerries;
 

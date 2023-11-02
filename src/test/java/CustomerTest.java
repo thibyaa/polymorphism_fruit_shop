@@ -45,9 +45,4 @@ public class CustomerTest {
         assertThat(losh.isMember()).isEqualTo(false);
     }
 
-    @Disabled
-    @Test
-    void canGetBurger(){
-//        assertThat(losh.getBasket()).isEqualTo();
-    }
 }

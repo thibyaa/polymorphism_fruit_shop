@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public class Melon extends Fruit{
+public class Melon extends Fruit {
 
     private boolean preCut;
 

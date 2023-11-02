@@ -19,7 +19,7 @@ public abstract class Fruit {
 
 //    CUSTOM METHODS
     public void checkIfFruitIsExpired(){
-        if(LocalDate.now().equals(dateOfDisplay.plusDays(shelfLife))){
+        if(LocalDate.now().compareTo(dateOfDisplay.plusDays(shelfLife)) > 0){
             setPrice(this.price *= 0.5);
             setExpired(true);
         }

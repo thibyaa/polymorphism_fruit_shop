@@ -21,16 +21,15 @@ public class Basket {
         } else this.total *= 1;
     }
 
-    public void buyThreeGetOneFree() {
+    public void buyThreeForThePriceOfTwo() {
         HashMap<Fruit, Integer> fruitfulDiscount = new HashMap<>();
-        // loop through the fruits array
+
         for(Fruit fruit: fruits){
             if(fruitfulDiscount.containsKey(fruit)) {
                 fruitfulDiscount.put(fruit, fruitfulDiscount.get(fruit) + 1);
             } else fruitfulDiscount.put(fruit, 1);
         }
 
-        // divide all values by 3, round down to the nearest whole value
         for(Fruit fruit: fruitfulDiscount.keySet()){
             double freeFruit = Math.floor(fruitfulDiscount.get(fruit)/3);
             double totalDiscount = fruit.getPrice() * freeFruit;

@@ -1,5 +1,4 @@
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -17,7 +16,7 @@ public class BasketTest {
         gaws = new Customer("Gawsalya", 50.00, true);
         sarmi = new Customer("Sarmika", 40.00, false);
         grapefruit = new Citrus("Grapefruit", 10.00, LocalDate.of(2023,10,27), 4, true);
-        blueberry = new Berry("Blueberry", 6.00,20, LocalDate.of(2023, 11, 23), 6);
+        blueberry = new Berry("Blueberry", 6.99,20, LocalDate.of(2023, 11, 23), 6);
         gaws.getBasket().addFruitToBasket(grapefruit);
         sarmi.getBasket().addFruitToBasket(blueberry);
     }
@@ -40,8 +39,8 @@ public class BasketTest {
     void canCalculateTotal(){
         gaws.getBasket().addFruitToBasket(blueberry);
         gaws.getBasket().calculateTotal();
-        assertThat(gaws.getBasket().getTotal()).isEqualTo(16.00);
-        // weird bug when fruit price is 6.99 - maths goes wrong
+        assertThat(gaws.getBasket().getTotal()).isEqualTo(16.99);
+        // weird bug when fruit price is 6.99 - maths goes wrong (delta 001)
     }
 
     @Test
@@ -73,7 +72,15 @@ public class BasketTest {
     }
 
     @Test
-    void canBuyThreeGetOneFree(){
-        gaws.getBasket().buyThreeGetOneFree();
+    void canBuyThreeForThePriceOfTwo(){
+        Citrus orange = new Citrus("Orange", 5.00, LocalDate.of(2023, 11, 18), 5, true);
+        Citrus mandarin = new Citrus("Orange", 9.00, LocalDate.of(2023, 12, 18), 5, true);
+        gaws.getBasket().addFruitToBasket(orange);
+        gaws.getBasket().addFruitToBasket(orange);
+        gaws.getBasket().addFruitToBasket(orange);
+
+        gaws.getBasket().calculateTotal();
+        gaws.getBasket().buyThreeForThePriceOfTwo();
+        assertThat(gaws.getBasket().getTotal()).isEqualTo(20.00);
     }
 }
